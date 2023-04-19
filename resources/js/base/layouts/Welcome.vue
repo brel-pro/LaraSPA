@@ -29,12 +29,13 @@ import Child from '@/base/components/Child.vue'
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
 html, body {
     background-color: #fff;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
-    font-weight: 200;
-    height: 100vh;
+    
+    // height: 100vh;
     margin: 0;
 }
 .full-height {

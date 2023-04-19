@@ -18,5 +18,6 @@ const title = window.config.appName
 <style lang="scss" scoped>
     .title {
         font-size: 64px;
+        font-weight: 200;
     }
 </style>
