@@ -1,6 +1,9 @@
 import ruLocale from 'element-plus/lib/locale/lang/ru'
 
 export const messages = {
+    Home: 'Home',
+    home: 'Home',
+    Dashboard: 'Dashboard',
     global: {
         ok: 'Ok',
         cancel: 'Отмена',
@@ -64,7 +67,22 @@ export const messages = {
             email: 'Email',
             edit: 'Edit profile',
             change_password: 'Change password',
+        }    
+    },
+    form: {
+        rules: {
+            required: 'Обязательное', 
+            email: 'Неверный email'
         }
+    },
+    profile: {
+        name: 'Имя',
+        email: 'Почта',
+        edit: 'Редактировать профиль',
+        change_password: 'Сменить пароль',
+        old_password: 'Старый пароль',
+        new_password: 'Новый пароль',
+        confirm_password: 'Подтвердить пароль',
     },
     ...ruLocale
 }

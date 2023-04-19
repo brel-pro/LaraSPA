@@ -11,7 +11,7 @@
             prop="name"
             :label="$t('profile.name')"
             class="form-group"
-            :error="$t(errors.get('name'))"
+            :error="errors.get('name')"
         >
             <el-input
                 v-model="form.name"
@@ -23,7 +23,7 @@
             prop="email"
             :label="$t('profile.email')"
             class="form-group"
-            :error="$t(errors.get('email'))"
+            :error="errors.get('email')"
         >
             <el-input
                 v-model="form.email"

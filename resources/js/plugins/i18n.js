@@ -3,7 +3,7 @@ import messages from './../includes/lang'
 import axios from 'axios'
 import {changeDayjsLocale} from './day'
 
-const DEFAULT_LANGUAGE = 'en'
+const DEFAULT_LANGUAGE = 'ru'
 
 changeDayjsLocale(DEFAULT_LANGUAGE)
 

@@ -1,9 +1,12 @@
 import enLocale from 'element-plus/lib/locale/lang/en'
 
 export const messages = {
+    Home: 'Home',
+    Dashboard: 'Dashboard',
     global: {
         ok: 'Ok',
         cancel: 'Cancel',
+        home: 'Home',
         save: 'Save',
         add: 'Add',
         edit: 'Edit',
@@ -56,6 +59,12 @@ export const messages = {
             text: 'You will be logged out',
             button_ok: 'Ok',
             button_cancel: 'Cancel',
+        }
+    },
+    form: {
+        rules: {
+            required: 'requaired', 
+            email: 'Wrong email'
         }
     },
     profile: {
