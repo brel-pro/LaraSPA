@@ -10,7 +10,7 @@
         <el-form-item
             prop="email"
             :label="$t('auth.login.email_label')"
-            :error="$t(errors.get('email'))"
+            :error="errors.get('email')"
             class="form-group"
         >
             <el-input
@@ -22,7 +22,7 @@
         <el-form-item
             prop="password"
             :label="$t('auth.login.password_label')"
-            :error="$t(errors.get('password'))"
+            :error="errors.get('password')"
             class="form-group"
         >
             <el-input

@@ -10,7 +10,7 @@
             prop="name"
             :label="$t('auth.register.name_label')"
             class="form-group"
-            :error="$t(errors.get('name'))"
+            :error="errors.get('name')"
         >
             <el-input
                 v-model="form.name"
@@ -22,7 +22,7 @@
             prop="email"
             :label="$t('auth.register.email_label')"
             class="form-group"
-            :error="$t(errors.get('email'))"
+            :error="errors.get('email')"
         >
             <el-input
                 v-model="form.email"
@@ -34,7 +34,7 @@
             prop="password"
             :label="$t('auth.register.password_label')"
             class="form-group"
-            :error="$t(errors.get('password'))"
+            :error="errors.get('password')"
         >
             <el-input
                 v-model="form.password"

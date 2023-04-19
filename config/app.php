@@ -68,6 +68,8 @@ return [
 
     'admin_panel_prefix' => env('ADMIN_PANEL_PREFIX', ''),
 
+    'defaul_locale' => env('APP_DEFAULT_LOCALE', 'en'),
+
     // 'asset_url' => env('ASSET_URL', null),
 
     /*

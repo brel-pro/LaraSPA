@@ -6,7 +6,7 @@ import Login        from '../modules/auth/components/Login.vue'
 var indexOrLoginPage = Index
 
 const autoImportModules = import.meta.glob('../modules/*/routes.js', { import: 'routes' })
-const ondexOrLogin = import.meta.env.VITE_ADMIN_PANEL_INDEXLOGIN
+const indexOrLogin = import.meta.env.VITE_ADMIN_PANEL_INDEXLOGIN
 let moduleRoutes = []
 
 for (const path in autoImportModules) {
@@ -14,7 +14,7 @@ for (const path in autoImportModules) {
     moduleRoutes = moduleRoutes.concat(routes)
 }
 
-if (ondexOrLogin == 1) {    
+if (indexOrLogin == 1) {    
     var indexOrLoginPage = Login
 }
 

@@ -38,6 +38,8 @@ export default (app) => {
             refreshData: {enabled: false},
             rolesKey: 'all_permissions',
             parseUserData: function (data) {
+                console.log('parseUserData')
+                console.log(data.data.locale)
                 setI18nLanguage(data.data.locale || 'en')
                 return data.data || {}
             },
