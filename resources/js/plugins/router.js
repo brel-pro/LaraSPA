@@ -1,8 +1,20 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import {routes} from '@/base/routes'
 
+var subURL = ''
+
+
+// TODO make this beauty
+if (import.meta.env.VITE_SITE_SUB_URL ?? import.meta.env.VITE_SITE_SUB_URL != '') {
+    subURL = import.meta.env.VITE_SITE_SUB_URL    
+}
+
+if (import.meta.env.VITE_ADMIN_PANEL_PREFIX && import.meta.env.VITE_ADMIN_PANEL_PREFIX != '') {
+    subURL += import.meta.env.VITE_ADMIN_PANEL_PREFIX   
+}
+
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(subURL),
     routes,
     scrollBehavior(to, from, savedPosition) {
         return new Promise((resolve) => {

@@ -34,6 +34,7 @@ app.config.globalProperties.$filters = $filters
 app.config.globalProperties.$dayjs = $dayjs
 app.config.globalProperties.$bus = $bus
 
+
 app.mount('#app')
 
 export default app

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel Vue SPA Skeleton'),
+    'name' => env('APP_NAME', 'Lara SPA'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,11 +52,23 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('VITE_APP_URL', 'http://localhost'),
 
-    'api_url' => env('MIX_API_ENDPOINT', 'http://localhost/api'),
+    'api_url' => env('VITE_API_ENDPOINT', 'http://localhost/api'),
 
-    'asset_url' => env('ASSET_URL', null),
+    'api_prefix' => env('API_PREFIX'),
+
+    'site_sub_url' => env('SITE_SUB_URL'),
+
+    'larave_index_blade_enable' => env('LARAVEL_INDEX_BLADE_ENABLE', 0),
+
+    'larave_index_blade_prefix' => env('LARAVEL_INDEX_BLADE_PREFIX', ''),
+
+    'admin_panel_enable' => env('ADMIN_PANEL_ENABLE', 1),
+
+    'admin_panel_prefix' => env('ADMIN_PANEL_PREFIX', ''),
+
+    // 'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------

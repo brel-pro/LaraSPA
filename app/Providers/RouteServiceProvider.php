@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
@@ -16,19 +17,12 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
-    /**
-     * The path to the "home" route for your application.
-     *
-     * @var string
-     */
-    public const HOME = '/admin';
-
-    /**
-     * The Version of application api.
-     *
-     * @var string
-     */
-    public const API_PREFIX = 'api/v1';
+    public $api_prefix;
+    public $site_sub_url;
+    public $larave_index_blade_enable;
+    public $larave_index_blade_prefix;
+    public $admin_panel_enable;
+    public $admin_panel_prefix;
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -38,8 +32,14 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
         parent::boot();
+
+        $this->api_prefix = config('app.api_prefix', 'api/v1');
+        $this->site_sub_url = config('app.site_sub_url');
+        $this->larave_index_blade_enable = config('app.larave_index_blade_enable');
+        $this->larave_index_blade_prefix = config('app.larave_index_blade_prefix');
+        $this->admin_panel_enable = config('app.admin_panel_enable');
+        $this->admin_panel_prefix = config('app.admin_panel_prefix');
     }
 
     /**
@@ -49,6 +49,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
+        });
+
         $this->mapApiRoutes();
 
         $this->mapModulesRoutes();
@@ -67,7 +71,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::prefix($this->site_sub_url)
+             ->middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
@@ -81,7 +86,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix(self::API_PREFIX)
+        Route::prefix($this->site_sub_url.$this->api_prefix)
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
@@ -99,8 +104,16 @@ class RouteServiceProvider extends ServiceProvider
         Route::namespace($this->namespace)
             ->middleware('web')
             ->group(function () {
-                Route::view('/{any}', 'spa')
-                    ->where('any', '^(?!api).*');
+                if ($this->larave_index_blade_enable == 1) {
+                    Route::view($this->site_sub_url.$this->larave_index_blade_prefix, 'index');
+                }
+
+                if ($this->admin_panel_enable == 1) {
+                    Route::view($this->site_sub_url.$this->admin_panel_prefix, 'spa')
+                        ->where('any', '^(?!api).*');
+                    Route::view($this->site_sub_url.$this->admin_panel_prefix.'/{any}', 'spa')
+                        ->where('any', '^(?!api).*');
+                }
             });
     }
 
@@ -120,7 +133,7 @@ class RouteServiceProvider extends ServiceProvider
             $routesPath = $modules_folder.DIRECTORY_SEPARATOR.$module.DIRECTORY_SEPARATOR.'routes_api.php';
 
             if (file_exists($routesPath)) {
-                Route::prefix(self::API_PREFIX)
+                Route::prefix($this->site_sub_url.$this->api_prefix)
                     ->middleware(['api', 'auth:sanctum'])
                     ->namespace("\\App\\Modules\\$module\Controllers")
                     ->group($routesPath);
