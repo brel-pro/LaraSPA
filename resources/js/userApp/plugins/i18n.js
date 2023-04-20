@@ -17,8 +17,6 @@ const i18n = createI18n({
 setI18nLanguage(DEFAULT_LANGUAGE)
 
 export function setI18nLanguage (lang) {
-    console.log('setI18nLanguage')
-    console.log(lang)
     changeDayjsLocale(lang)
     i18n.locale = lang
     i18n.global.locale.value = lang

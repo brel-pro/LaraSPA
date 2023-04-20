@@ -10,9 +10,7 @@ export default {
     price: function (number) {
         return Number(number).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '\'')
     },
-    date: function (datetime) {
-        
-        console.log(dayjs.locale())
+    date: function (datetime) {        
         return dayjs(datetime).isValid() ? dayjs(datetime, DATETIME_DB_FORMAT).format(DATE_FORMAT) : ''
     },
     time: function (datetime) {
