@@ -125,7 +125,7 @@ import {computed, ref, watch} from 'vue'
 import dummyVariableSingularApi from '../dummyVariableSingularApi'
 import DummySingularForm from './DummySingularForm.vue'
 import {storeToRefs} from 'pinia'
-import {useDummySingularStore} from .'./dummyVariableSingularStore'
+import {useDummySingularStore} from '../dummyVariableSingularStore'
 import {ElMessage, ElMessageBox} from 'element-plus'
 import BaseFilter from '../../../base/components/filters/BaseFilter.vue'
 
