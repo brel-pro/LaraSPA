@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { useModelWrapper } from '@/includes/composable/modelWrapper'
+import { useModelWrapper } from '../../../includes/composable/modelWrapper'
 
 const emit = defineEmits()
 

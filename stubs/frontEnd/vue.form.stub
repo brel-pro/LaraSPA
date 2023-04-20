@@ -39,7 +39,7 @@
 import {ref, onMounted} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {ElMessage} from 'element-plus'
-import {useErrors} from '@/includes/composable/errors'
+import {useErrors} from '../../../includes/composable/errors'
 import dummyVariableSingularApi from '../dummyVariableSingularApi'
 
 const props = defineProps({
