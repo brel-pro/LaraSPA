@@ -2,6 +2,7 @@ import enLocale from 'element-plus/lib/locale/lang/en'
 
 export const messages = {
     Home: 'Home',
+    home: 'Home',
     Dashboard: 'Dashboard',
     global: {
         ok: 'Ok',
