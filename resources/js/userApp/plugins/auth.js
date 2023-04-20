@@ -17,9 +17,9 @@ export default (app) => {
             router: driverRouterVueRouter,
         },
         options: {
-            tokenDefaultKey:     'auth_token_adminApp',
-            rememberkey:         'auth_remember_adminApp',
-            staySignedInKey:     'auth_stay_signed_in_adminApp',
+            tokenDefaultKey:     'auth_token_userApp',
+            rememberkey:         'auth_remember_userApp',
+            staySignedInKey:     'auth_stay_signed_in_userApp',
             loginData: {
                 url: window.config.baseURL + 'auth/login',
                 redirect: {name: 'Dashboard'}
@@ -40,7 +40,7 @@ export default (app) => {
             },
             refreshData: {enabled: false},
             rolesKey: 'all_permissions',
-            parseUserData: function (data) {                
+            parseUserData: function (data) {            
                 setI18nLanguage(data.data.locale || 'en')
                 return data.data || {}
             },

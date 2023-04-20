@@ -40,7 +40,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            //            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class, // check if using the same domain
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class, // check if using the same domain
             //            'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],

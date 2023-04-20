@@ -23,6 +23,8 @@ class RouteServiceProvider extends ServiceProvider
     public $larave_index_blade_prefix;
     public $admin_panel_enable;
     public $admin_panel_prefix;
+    public $user_panel_enable;
+    public $user_panel_prefix;
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -40,6 +42,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->larave_index_blade_prefix = config('app.larave_index_blade_prefix');
         $this->admin_panel_enable = config('app.admin_panel_enable');
         $this->admin_panel_prefix = config('app.admin_panel_prefix');
+        $this->user_panel_enable = config('app.user_panel_enable');
+        $this->user_panel_prefix = config('app.user_panel_prefix');
     }
 
     /**
@@ -72,9 +76,9 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::prefix($this->site_sub_url)
-             ->middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web.php'));
     }
 
     /**
@@ -87,9 +91,9 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix($this->site_sub_url.$this->api_prefix)
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
     }
 
     /**
@@ -109,9 +113,16 @@ class RouteServiceProvider extends ServiceProvider
                 }
 
                 if ($this->admin_panel_enable == 1) {
-                    Route::view($this->site_sub_url.$this->admin_panel_prefix, 'spa')
+                    Route::view($this->site_sub_url.$this->admin_panel_prefix, 'adminApp')
                         ->where('any', '^(?!api).*');
-                    Route::view($this->site_sub_url.$this->admin_panel_prefix.'/{any}', 'spa')
+                    Route::view($this->site_sub_url.$this->admin_panel_prefix.'/{any}', 'adminApp')
+                        ->where('any', '^(?!api).*');
+                }
+
+                if ($this->user_panel_enable == 1) {
+                    Route::view($this->site_sub_url.$this->user_panel_prefix, 'userApp')
+                        ->where('any', '^(?!api).*');
+                    Route::view($this->site_sub_url.$this->user_panel_prefix.'/{any}', 'userApp')
                         ->where('any', '^(?!api).*');
                 }
             });

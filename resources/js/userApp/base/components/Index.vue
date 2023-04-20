@@ -1,8 +1,8 @@
 <template>
     <section id="index">
-        <div class="title mb-4">
+        <div class="title mb-4">             
             {{ title }} <br>
-            Admin Panel
+            User Panel
         </div>
         <div class="links">
             <a href="https://github.com/Yurich84/laravel-vue-spa-skeleton">

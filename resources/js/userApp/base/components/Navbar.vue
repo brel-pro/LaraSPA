@@ -4,7 +4,7 @@
             class="logo"
             :class="isCollapsed ? 'logo-collapse-width' : 'logo-width'"
         >
-            {{ isCollapsed ? '' : $config.appName + ' Admin' }} 
+            {{ isCollapsed ? '' : $config.appName + ' User' }} 
         </div>
         <div class="tools">
             <div @click.prevent="toggleCollapse">

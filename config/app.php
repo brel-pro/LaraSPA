@@ -68,6 +68,10 @@ return [
 
     'admin_panel_prefix' => env('ADMIN_PANEL_PREFIX', ''),
 
+    'user_panel_enable' => env('USER_PANEL_ENABLE', 1),
+
+    'user_panel_prefix' => env('USER_PANEL_PREFIX', ''),
+
     'defaul_locale' => env('APP_DEFAULT_LOCALE', 'en'),
 
     // 'asset_url' => env('ASSET_URL', null),
