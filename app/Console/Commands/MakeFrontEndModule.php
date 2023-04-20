@@ -33,7 +33,7 @@ class MakeFrontEndModule extends MakeModuleCommand
     {
         $this->files = new Filesystem();
         $this->module = $module;
-        $this->module_path = base_path('resources/js/modules/'.lcfirst($this->module));
+        $this->module_path = base_path('resources/js/adminApp/modules/'.lcfirst($this->module));
 
         $this->createVueList();
         $this->createVueView();

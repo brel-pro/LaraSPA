@@ -61,8 +61,8 @@
 import {ref} from 'vue'
 import {useRoute, useRouter} from 'vue-router'
 import {ElMessage} from 'element-plus'
-import profileApi from '@/modules/profile/profileApi'
-import {useErrors} from '@/includes/composable/errors'
+import profileApi from '../profileApi'
+import {useErrors} from '../../../includes/composable/errors'
 
 const emit = defineEmits()
 const router = useRouter()

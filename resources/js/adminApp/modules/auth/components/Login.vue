@@ -13,7 +13,7 @@
 import LoginForm from './LoginForm.vue'
 import {ref} from 'vue'
 import {useAuth} from '@websanova/vue-auth'
-import {useErrors} from '@/includes/composable/errors'
+import {useErrors} from '../../../includes/composable/errors'
 
 const errors = useErrors()
 const auth = useAuth()

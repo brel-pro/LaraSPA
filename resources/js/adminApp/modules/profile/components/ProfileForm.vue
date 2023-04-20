@@ -48,7 +48,7 @@
 import {ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {useAuth} from '@websanova/vue-auth'
-import {useErrors} from '@/includes/composable/errors'
+import {useErrors} from '../../../includes/composable/errors'
 import settingApi from '../profileApi'
 import {ElMessage} from 'element-plus'
 

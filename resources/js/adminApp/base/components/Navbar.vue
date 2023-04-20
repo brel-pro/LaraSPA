@@ -42,10 +42,10 @@
 import {computed} from 'vue'
 import {ElMessageBox} from 'element-plus'
 import {useAuth} from '@websanova/vue-auth'
-import bus from '@/includes/Event'
+import bus from '../../includes/Event'
 import { useI18n } from 'vue-i18n'
 import {storeToRefs} from 'pinia'
-import {useBaseStore} from '@/base/baseStore'
+import {useBaseStore} from '../baseStore'
 
 const {t} = useI18n()
 const auth = useAuth()

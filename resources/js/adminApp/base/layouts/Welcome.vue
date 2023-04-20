@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import Child from '@/base/components/Child.vue'
+import Child from '../components/Child.vue'
 </script>
 
 <style lang="scss" scoped>

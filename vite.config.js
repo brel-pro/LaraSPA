@@ -12,7 +12,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/app.scss',
-                'resources/js/app.js'
+                'resources/js/adminApp/app.js'
             ],
             refresh: [
                 'resources/js/**',
@@ -30,7 +30,7 @@ export default defineConfig({
     ],
     resolve: {
         alias: [
-            {
+            {                
                 // this is required for the SCSS modules
                 find: /^~(.*)$/,
                 replacement: '$1',

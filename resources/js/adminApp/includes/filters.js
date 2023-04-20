@@ -1,5 +1,5 @@
-import dayjs from '@/plugins/day'
-import {DATE_FORMAT, DATETIME_DB_FORMAT, DATETIME_FORMAT} from '@/base/constants/time.constants'
+import dayjs from '../plugins/day'
+import {DATE_FORMAT, DATETIME_DB_FORMAT, DATETIME_FORMAT} from '../base/constants/time.constants'
 
 export default {
     capitalize: function (value) {

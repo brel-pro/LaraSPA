@@ -2,7 +2,7 @@ import Login from './components/Login.vue'
 import Register from './components/Register.vue'
 import VerifyEmail from './components/VerifyEmail.vue'
 import ResendVerification from './components/ResendVerification.vue'
-import Child from '@/base/components/Child.vue'
+import Child from '../../base/components/Child.vue'
 
 export const routes = [
     {

@@ -18,10 +18,10 @@
 </template>
 
 <script setup>
-import Navbar from '@/base/components/Navbar.vue'
-import Sidebar from '@/base/components/Sidebar.vue'
-import Breadcrumbs from '@/base/components/Breadcrumbs.vue'
-import Child from '@/base/components/Child.vue'
+import Navbar from '../components/Navbar.vue'
+import Sidebar from '../components/Sidebar.vue'
+import Breadcrumbs from '../components/Breadcrumbs.vue'
+import Child from '../components/Child.vue'
 </script>
 
 <style lang="scss">
