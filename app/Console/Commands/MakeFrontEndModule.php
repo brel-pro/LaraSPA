@@ -43,6 +43,19 @@ class MakeFrontEndModule extends MakeModuleCommand
 
         $this->createRoutes();
         $this->createApi();
+
+        $this->files = new Filesystem();
+        $this->module = $module;
+        $this->module_path = base_path('resources/js/userApp/modules/'.lcfirst($this->module));
+
+        $this->createVueList();
+        $this->createVueView();
+        $this->createVueForm();
+
+        $this->createStore();
+
+        $this->createRoutes();
+        $this->createApi();
     }
 
     /**
