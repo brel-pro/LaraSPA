@@ -25,7 +25,9 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest', ['except' => [
+            'logout', 'login',
+        ]]);
     }
 
     protected function setToken(string $token): void

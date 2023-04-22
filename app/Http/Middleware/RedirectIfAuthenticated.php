@@ -18,7 +18,16 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        //TODO need to skip this, if it login route
+        //TODO get the right HOME
+
+        $requestUri = $request->requestUri;
+        $isLoginRoute = str_contains($request['requestUri'], 'auth/login');
+
         if (Auth::guard($guard)->check()) {
+            // if ($isLoginRoute) {
+            //     # code...
+            // }
             return redirect(RouteServiceProvider::HOME);
         }
 
