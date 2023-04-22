@@ -12,11 +12,13 @@
 
 </div>
 
+#### This project is a fork of https://github.com/Yurich84/laravel-vue3-spa/
+
 #### This is a groundwork for a large modular SPA, that utilises Laravel, Vue, ElementUI. 
 #### CRUD generator is integrated in project creates standalone modules on the frontend and backend.
 
 <p align="center">
-    <img width="100%" src="https://i.imgur.com/VNa5jOg.png" >
+    <img width="100%" src="https://ibb.co/S6j8nSL" >
 </p>
 
 The main goals of the project are:
@@ -113,4 +115,3 @@ This will create:
 
 Every module loads dynamically.
 
-## [Video](https://www.youtube.com/watch?v=0qKNlrmhgNg)
