@@ -59,6 +59,49 @@ class MakeFrontEndModule extends MakeModuleCommand
     }
 
     /**
+     * @param $module
+     *
+     * @throws FileNotFoundException
+     */
+    protected function createAdminModule($module)
+    {
+        $this->files = new Filesystem();
+        $this->module = $module;
+        $this->module_path = base_path('resources/js/adminApp/modules/'.lcfirst($this->module));
+
+        $this->createVueList();
+        $this->createVueView();
+        $this->createVueForm();
+
+        $this->createStore();
+
+        $this->createRoutes();
+        $this->createApi();
+
+    }
+
+    /**
+     * @param $module
+     *
+     * @throws FileNotFoundException
+     */
+    protected function createUserModule($module)
+    {
+        $this->files = new Filesystem();
+        $this->module = $module;
+        $this->module_path = base_path('resources/js/userApp/modules/'.lcfirst($this->module));
+
+        $this->createVueList();
+        $this->createVueView();
+        $this->createVueForm();
+
+        $this->createStore();
+
+        $this->createRoutes();
+        $this->createApi();
+    }
+
+    /**
      * Create a Vue component file for the module.
      *
      * @return void

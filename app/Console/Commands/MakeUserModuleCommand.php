@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use Illuminate\Support\Stringable;
 
-class MakeModuleCommand extends Command
+class MakeUserModuleCommand extends Command
 {
     /**
      * The filesystem instance.
@@ -24,7 +24,7 @@ class MakeModuleCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'laraspa:module {name}';
+    protected $signature = 'laraspa:userModule {name}';
 
     /**
      * The console command description.
@@ -66,7 +66,7 @@ class MakeModuleCommand extends Command
 
         $backEndModule->create($this->module);
 
-        $frontEndModule->create($this->module);
+        $frontEndModule->createUserModule($this->module);
 
         $this->createFactory();
 
