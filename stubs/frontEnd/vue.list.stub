@@ -11,6 +11,15 @@
         >
             Add
         </el-button>
+        <el-form-item>
+            <el-button
+                :span="6"
+                type="primary"
+                icon="refresh"
+                @click="handleRefresh"
+                style="margin-left: 20px;"
+            />
+        </el-form-item>
         <base-filter
             v-model="filters"
             class="float-right"
@@ -161,6 +170,10 @@ function handleAdd() {
     formTitle.value = 'New DummySingular'
     formData.value = {}
     formVisible.value = true
+}
+
+function handleRefresh() {
+    fetchAll(params.value)
 }
 
 function handleEdit(row) {
