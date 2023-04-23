@@ -29,7 +29,7 @@ class MakeBackEndModule extends MakeModuleCommand
      *
      * @throws FileNotFoundException
      */
-    protected function create($module)
+    public function create($module)
     {
         $this->files = new Filesystem();
         $this->module = $module;

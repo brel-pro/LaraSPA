@@ -29,7 +29,7 @@ class MakeFrontEndModule extends MakeModuleCommand
      *
      * @throws FileNotFoundException
      */
-    protected function create($module)
+    public function create($module)
     {
         $this->files = new Filesystem();
         $this->module = $module;
@@ -63,7 +63,7 @@ class MakeFrontEndModule extends MakeModuleCommand
      *
      * @throws FileNotFoundException
      */
-    protected function createAdminModule($module)
+    public function createAdminModule($module)
     {
         $this->files = new Filesystem();
         $this->module = $module;
@@ -85,7 +85,7 @@ class MakeFrontEndModule extends MakeModuleCommand
      *
      * @throws FileNotFoundException
      */
-    protected function createUserModule($module)
+    public function createUserModule($module)
     {
         $this->files = new Filesystem();
         $this->module = $module;
